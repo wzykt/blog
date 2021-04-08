@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="_fragments :: head(~{::title})">
+    <meta charset="utf-8">
+    <title>归档</title>
+</head>
+<body>
+<!--    导航-->
+<nav th:replace="_fragments :: menu(4)">
+</nav>
+
+<!--container-->
+<div class="m-padded-tb-big m-container">
+    <div class="ui container">
+        <!--        header-->
+        <div class="ui top attached segment">
+            <div class="ui middle aligned two column grid">
+                <div class="column">
+                    <h3 class="ui teal header">归档</h3>
+                </div>
+                <div class="right aligned column ">
+                    <!--m-inline-block解决了展示是列的问题-->
+                    共 <h3 class="ui orange header m-inline-block" th:text="${blogCount}">6</h3> 篇博客
+                </div>
+            </div>
+        </div>
+
+        <th:block th:each="item : ${archiveMap}">
+            <div class="ui center aligned header" th:text="${item.key}">
+                2020
+            </div>
+            <div class="ui fluid vertical menu" th:each="blog : ${item.value}">
+                <a href="#" th:href="@{/blog/{id}(id=${blog.id})}" target="_blank" class="item">
+                <span>
+                    <i class="mini teal circle icon"></i><span th:text="${blog.title}">关于简历</span>
+                    <div class="ui teal basic left pointing label m-padded-tb-small"
+                         th:text="${#dates.format(blog.updateTime,'MMMdd')}">十月十日</div>
+                </span>
+                    <div class="ui orange basic left pointing label m-padded-tb-small" th:text="${blog.flag}">原创</div>
+                </a>
+            </div>
+        </th:block>
+    </div>
+</div>
+
+<!--页脚-->
+<footer th:replace="/_fragments :: footer"></footer>
+
+
+<!--/*/<th:block th:replace="_fragments :: script">/*/-->
+
+<!--/*/</th:block>/*/-->
+<script>
+    // click无法正常使用，所以使用on
+    $('.menu.toggle').on('click', function () {
+        // 隐藏标签属性为m-item的m-mobile-hide的class
+        $('.m-item').toggleClass('m-mobile-hide');
+    });
+
+</script>
+</body>
+</html>

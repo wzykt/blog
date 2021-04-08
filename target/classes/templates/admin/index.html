@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="admin/_fragments :: head(~{::title})">
+    <meta charset="utf-8">
+    <title>登录成功</title>
+</head>
+<body>
+<!--    导航-->
+<nav th:replace="admin/_fragments :: menu(0)">
+
+</nav>
+
+
+
+
+<!--中间内容-->
+<div class="m-container m-padded-tb-massive">
+    <div class="ui container">
+
+        <div class="ui success large message">
+            <h3>Hi</h3>
+            <p>登陆成功</p>
+        </div>
+
+    </div>
+</div>
+
+
+<!--页脚-->
+<footer th:replace="admin/_fragments :: footer">
+</footer>
+
+<!--/*/<th:block th:replace="admin/_fragments :: script">/*/-->
+
+<!--/*/</th:block>/*/-->
+<script>
+    // click无法正常使用，所以使用on
+    $('.menu.toggle').on('click', function () {
+        // 隐藏标签属性为m-item的m-mobile-hide的class
+        $('.m-item').toggleClass('m-mobile-hide');
+    });
+
+    $('#payButton').popup({
+        // 绑定标签
+        popup: $('.payQR.popup'),
+        // 触发条件
+        on: 'click',
+        // 绑定的标签出现的位置
+        position: 'bottom left',
+    });
+
+    $('.ui.dropdown').dropdown({
+        // 更改触发条件
+        on: 'hover'
+    });
+</script>
+</body>
+</html>

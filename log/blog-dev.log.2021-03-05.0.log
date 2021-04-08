@@ -1,0 +1,76 @@
+2021-03-05 20:07:47.706  INFO 17528 --- [restartedMain] com.wzy.blog.BlogApplication             : Starting BlogApplication using Java 1.8.0_191 on DESKTOP-KNHHVU7 with PID 17528 (D:\Download\Compressed\blog\target\classes started by WZY in D:\Download\Compressed\blog)
+2021-03-05 20:07:47.710 DEBUG 17528 --- [restartedMain] com.wzy.blog.BlogApplication             : Running with Spring Boot v2.4.2, Spring v5.3.3
+2021-03-05 20:07:47.711  INFO 17528 --- [restartedMain] com.wzy.blog.BlogApplication             : The following profiles are active: dev
+2021-03-05 20:07:47.754  INFO 17528 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2021-03-05 20:07:47.755  INFO 17528 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2021-03-05 20:07:48.845  INFO 17528 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2021-03-05 20:07:48.923  INFO 17528 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 68 ms. Found 5 JPA repository interfaces.
+2021-03-05 20:07:49.885  INFO 17528 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2021-03-05 20:07:49.894  INFO 17528 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2021-03-05 20:07:49.894  INFO 17528 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.41]
+2021-03-05 20:07:49.896  INFO 17528 --- [restartedMain] o.a.catalina.core.AprLifecycleListener   : Loaded Apache Tomcat Native library [1.2.26] using APR version [1.7.0].
+2021-03-05 20:07:49.897  INFO 17528 --- [restartedMain] o.a.catalina.core.AprLifecycleListener   : APR capabilities: IPv6 [true], sendfile [true], accept filters [false], random [true].
+2021-03-05 20:07:49.897  INFO 17528 --- [restartedMain] o.a.catalina.core.AprLifecycleListener   : APR/OpenSSL configuration: useAprConnector [false], useOpenSSL [true]
+2021-03-05 20:07:50.000  INFO 17528 --- [restartedMain] o.a.catalina.core.AprLifecycleListener   : OpenSSL successfully initialized [OpenSSL 1.1.1i  8 Dec 2020]
+2021-03-05 20:07:50.116  INFO 17528 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2021-03-05 20:07:50.116  INFO 17528 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2360 ms
+2021-03-05 20:07:50.291  INFO 17528 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2021-03-05 20:07:50.343  INFO 17528 --- [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.4.27.Final
+2021-03-05 20:07:50.463  INFO 17528 --- [restartedMain] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2021-03-05 20:07:50.549  INFO 17528 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2021-03-05 20:07:51.091  INFO 17528 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2021-03-05 20:07:51.110  INFO 17528 --- [restartedMain] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL57Dialect
+2021-03-05 20:07:52.111  INFO 17528 --- [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2021-03-05 20:07:52.118  INFO 17528 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2021-03-05 20:07:52.163  INFO 17528 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2021-03-05 20:07:53.029  WARN 17528 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2021-03-05 20:07:53.172  INFO 17528 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2021-03-05 20:07:53.268  INFO 17528 --- [restartedMain] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2021-03-05 20:07:53.875  INFO 17528 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2021-03-05 20:07:53.884  INFO 17528 --- [restartedMain] com.wzy.blog.BlogApplication             : Started BlogApplication in 6.769 seconds (JVM running for 7.835)
+2021-03-05 20:11:15.481  INFO 17528 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2021-03-05 20:11:15.481  INFO 17528 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2021-03-05 20:11:15.482  INFO 17528 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2021-03-05 20:11:15.550  INFO 17528 --- [http-nio-8080-exec-1] com.wzy.blog.aspect.LogAspect            : Request : {url='http://localhost:8080/', ip='0:0:0:0:0:0:0:1', classMethod='com.wzy.blog.web.IndexController.index', args=[Page request [number: 0, size 8, sort: updateTime: DESC], {}]}
+2021-03-05 20:11:15.816  WARN 17528 --- [http-nio-8080-exec-1] org.hibernate.orm.deprecation            : HHH90000016: Found use of deprecated 'collection property' syntax in HQL/JPQL query [t.blogs.size]; use collection function syntax instead [size(t.blogs)].
+2021-03-05 20:11:15.863  INFO 17528 --- [http-nio-8080-exec-1] com.wzy.blog.aspect.LogAspect            : Result : index
+2021-03-05 20:11:15.864  INFO 17528 --- [http-nio-8080-exec-1] com.wzy.blog.aspect.LogAspect            : --------doAfter---------
+2021-03-05 20:12:16.370  INFO 17528 --- [http-nio-8080-exec-1] com.wzy.blog.aspect.LogAspect            : Request : {url='http://localhost:8080/types/-1', ip='0:0:0:0:0:0:0:1', classMethod='com.wzy.blog.web.TypeShowController.types', args=[Page request [number: 0, size 8, sort: updateTime: DESC], -1, {}]}
+2021-03-05 20:12:16.442  INFO 17528 --- [http-nio-8080-exec-1] com.wzy.blog.aspect.LogAspect            : Result : types
+2021-03-05 20:12:16.442  INFO 17528 --- [http-nio-8080-exec-1] com.wzy.blog.aspect.LogAspect            : --------doAfter---------
+2021-03-05 20:12:17.036  INFO 17528 --- [http-nio-8080-exec-2] com.wzy.blog.aspect.LogAspect            : Request : {url='http://localhost:8080/footer/newblogs', ip='0:0:0:0:0:0:0:1', classMethod='com.wzy.blog.web.IndexController.newblogs', args=[{}]}
+2021-03-05 20:12:17.039  INFO 17528 --- [http-nio-8080-exec-2] com.wzy.blog.aspect.LogAspect            : Result : _fragments :: newblogList
+2021-03-05 20:12:17.040  INFO 17528 --- [http-nio-8080-exec-2] com.wzy.blog.aspect.LogAspect            : --------doAfter---------
+2021-03-05 20:12:18.175  INFO 17528 --- [http-nio-8080-exec-6] com.wzy.blog.aspect.LogAspect            : Request : {url='http://localhost:8080/tags/-1', ip='0:0:0:0:0:0:0:1', classMethod='com.wzy.blog.web.TagShowController.types', args=[Page request [number: 0, size 8, sort: updateTime: DESC], -1, {}]}
+2021-03-05 20:12:18.261  INFO 17528 --- [http-nio-8080-exec-6] com.wzy.blog.aspect.LogAspect            : Result : tags
+2021-03-05 20:12:18.261  INFO 17528 --- [http-nio-8080-exec-6] com.wzy.blog.aspect.LogAspect            : --------doAfter---------
+2021-03-05 20:12:18.554  INFO 17528 --- [http-nio-8080-exec-3] com.wzy.blog.aspect.LogAspect            : Request : {url='http://localhost:8080/footer/newblogs', ip='0:0:0:0:0:0:0:1', classMethod='com.wzy.blog.web.IndexController.newblogs', args=[{}]}
+2021-03-05 20:12:18.559  INFO 17528 --- [http-nio-8080-exec-3] com.wzy.blog.aspect.LogAspect            : Result : _fragments :: newblogList
+2021-03-05 20:12:18.559  INFO 17528 --- [http-nio-8080-exec-3] com.wzy.blog.aspect.LogAspect            : --------doAfter---------
+2021-03-05 20:12:22.686  INFO 17528 --- [http-nio-8080-exec-4] com.wzy.blog.aspect.LogAspect            : Request : {url='http://localhost:8080/tags/23', ip='0:0:0:0:0:0:0:1', classMethod='com.wzy.blog.web.TagShowController.types', args=[Page request [number: 0, size 8, sort: updateTime: DESC], 23, {}]}
+2021-03-05 20:12:22.692  INFO 17528 --- [http-nio-8080-exec-4] com.wzy.blog.aspect.LogAspect            : Result : tags
+2021-03-05 20:12:22.692  INFO 17528 --- [http-nio-8080-exec-4] com.wzy.blog.aspect.LogAspect            : --------doAfter---------
+2021-03-05 20:12:22.996  INFO 17528 --- [http-nio-8080-exec-9] com.wzy.blog.aspect.LogAspect            : Request : {url='http://localhost:8080/footer/newblogs', ip='0:0:0:0:0:0:0:1', classMethod='com.wzy.blog.web.IndexController.newblogs', args=[{}]}
+2021-03-05 20:12:23.002  INFO 17528 --- [http-nio-8080-exec-9] com.wzy.blog.aspect.LogAspect            : Result : _fragments :: newblogList
+2021-03-05 20:12:23.002  INFO 17528 --- [http-nio-8080-exec-9] com.wzy.blog.aspect.LogAspect            : --------doAfter---------
+2021-03-05 20:12:24.094  INFO 17528 --- [http-nio-8080-exec-2] com.wzy.blog.aspect.LogAspect            : Request : {url='http://localhost:8080/tags/12', ip='0:0:0:0:0:0:0:1', classMethod='com.wzy.blog.web.TagShowController.types', args=[Page request [number: 0, size 8, sort: updateTime: DESC], 12, {}]}
+2021-03-05 20:12:24.100  INFO 17528 --- [http-nio-8080-exec-2] com.wzy.blog.aspect.LogAspect            : Result : tags
+2021-03-05 20:12:24.100  INFO 17528 --- [http-nio-8080-exec-2] com.wzy.blog.aspect.LogAspect            : --------doAfter---------
+2021-03-05 20:12:24.420  INFO 17528 --- [http-nio-8080-exec-1] com.wzy.blog.aspect.LogAspect            : Request : {url='http://localhost:8080/footer/newblogs', ip='0:0:0:0:0:0:0:1', classMethod='com.wzy.blog.web.IndexController.newblogs', args=[{}]}
+2021-03-05 20:12:24.423  INFO 17528 --- [http-nio-8080-exec-1] com.wzy.blog.aspect.LogAspect            : Result : _fragments :: newblogList
+2021-03-05 20:12:24.424  INFO 17528 --- [http-nio-8080-exec-1] com.wzy.blog.aspect.LogAspect            : --------doAfter---------
+2021-03-05 20:12:24.945  INFO 17528 --- [http-nio-8080-exec-8] com.wzy.blog.aspect.LogAspect            : Request : {url='http://localhost:8080/tags/23', ip='0:0:0:0:0:0:0:1', classMethod='com.wzy.blog.web.TagShowController.types', args=[Page request [number: 0, size 8, sort: updateTime: DESC], 23, {}]}
+2021-03-05 20:12:24.949  INFO 17528 --- [http-nio-8080-exec-8] com.wzy.blog.aspect.LogAspect            : Result : tags
+2021-03-05 20:12:24.950  INFO 17528 --- [http-nio-8080-exec-8] com.wzy.blog.aspect.LogAspect            : --------doAfter---------
+2021-03-05 20:12:25.260  INFO 17528 --- [http-nio-8080-exec-5] com.wzy.blog.aspect.LogAspect            : Request : {url='http://localhost:8080/footer/newblogs', ip='0:0:0:0:0:0:0:1', classMethod='com.wzy.blog.web.IndexController.newblogs', args=[{}]}
+2021-03-05 20:12:25.263  INFO 17528 --- [http-nio-8080-exec-5] com.wzy.blog.aspect.LogAspect            : Result : _fragments :: newblogList
+2021-03-05 20:12:25.264  INFO 17528 --- [http-nio-8080-exec-5] com.wzy.blog.aspect.LogAspect            : --------doAfter---------
+2021-03-05 20:12:26.501  INFO 17528 --- [http-nio-8080-exec-7] com.wzy.blog.aspect.LogAspect            : Request : {url='http://localhost:8080/tags/12', ip='0:0:0:0:0:0:0:1', classMethod='com.wzy.blog.web.TagShowController.types', args=[Page request [number: 0, size 8, sort: updateTime: DESC], 12, {}]}
+2021-03-05 20:12:26.510  INFO 17528 --- [http-nio-8080-exec-7] com.wzy.blog.aspect.LogAspect            : Result : tags
+2021-03-05 20:12:26.510  INFO 17528 --- [http-nio-8080-exec-7] com.wzy.blog.aspect.LogAspect            : --------doAfter---------
+2021-03-05 20:12:26.831  INFO 17528 --- [http-nio-8080-exec-6] com.wzy.blog.aspect.LogAspect            : Request : {url='http://localhost:8080/footer/newblogs', ip='0:0:0:0:0:0:0:1', classMethod='com.wzy.blog.web.IndexController.newblogs', args=[{}]}
+2021-03-05 20:12:26.836  INFO 17528 --- [http-nio-8080-exec-6] com.wzy.blog.aspect.LogAspect            : Result : _fragments :: newblogList
+2021-03-05 20:12:26.836  INFO 17528 --- [http-nio-8080-exec-6] com.wzy.blog.aspect.LogAspect            : --------doAfter---------
+2021-03-05 20:16:33.830  INFO 17528 --- [http-nio-8080-exec-1] com.wzy.blog.aspect.LogAspect            : Request : {url='http://localhost:8080/', ip='0:0:0:0:0:0:0:1', classMethod='com.wzy.blog.web.IndexController.index', args=[Page request [number: 0, size 8, sort: updateTime: DESC], {}]}
+2021-03-05 20:16:33.844  INFO 17528 --- [http-nio-8080-exec-1] com.wzy.blog.aspect.LogAspect            : Result : index
+2021-03-05 20:16:33.845  INFO 17528 --- [http-nio-8080-exec-1] com.wzy.blog.aspect.LogAspect            : --------doAfter---------

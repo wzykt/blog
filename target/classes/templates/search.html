@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="_fragments :: head(~{::title})">
+    <meta charset="utf-8">
+    <title>搜索结果</title>
+</head>
+<body>
+<!--    导航-->
+<nav th:replace="_fragments :: menu(0)">
+</nav>
+
+<!--container-->
+<div class="m-padded-tb-big m-container">
+    <div class="ui container">
+        <!--        header-->
+        <div class="ui top attached segment">
+            <div class="ui middle aligned two column grid">
+                <div class="column">
+                    <h3 class="ui teal header">搜索结果</h3>
+                </div>
+                <div class="right aligned column ">
+                    <!--m-inline-block解决了展示是列的问题-->
+                    共 <h3 class="ui orange header m-inline-block" th:text="${page.totalElements}">5</h3> 个
+                </div>
+            </div>
+        </div>
+
+
+        <!--top和bottom 为一体-->
+        <div class="ui top attached teal segment">
+            <div class="ui padded vertical segment m-padded-tb-big" th:each="blog:${page.content}">
+                <div class="ui mobile reversed stackable grid">
+                    <div class="eleven wide column">
+                        <div class="ui header"><a href="#" class="m-black"
+                                                  th:href="@{/blog/{id}(id=${blog.id})}" target="_black"
+                                                  th:text="${blog.title}">JQuery</a></div>
+                        <p class="m-text-lined" th:text="|${blog.description}...|">jQuery 是一个高效、精简并且功能丰富的
+                            JavaScript 工具库。它提供的 API 易于使用且兼容众多浏览器，这让诸如
+                            HTML
+                            文档遍历和操作、事件处理、动画和 Ajax
+                            操作更加简单。
+                        </p>
+                        <div class="ui grid">
+                            <div class="eleven wide column">
+                                <div class="ui horizontal link list">
+                                    <div class="item">
+                                        <img src="https://unsplash.it/100/100?image=1005"
+                                             th:src="@{${blog.user.avatar}}" alt=""
+                                             class="ui center avatar image">
+                                        <!--图片后接文字class=“content”-->
+                                        <div class="content"><a href="" class="header"
+                                                                th:text="${blog.user.nickname}">wzy</a></div>
+                                    </div>
+                                    <div class="item">
+                                        <i class="calendar icon"></i><span
+                                            th:text="${#dates.format(blog.updateTime,'yyyy-MM-dd')}">2000-11-15</span>
+                                    </div>
+                                    <div class="item">
+                                        <i class="eye icon" th:text="${blog.views}">123</i>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="right aligned five wide column">
+                                <a href="#" class="ui label" th:text="${blog.type.name}">认知升级</a>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="five wide column">
+                        <a href="#" target="_blank" th:href="@{/blog/{id}(id=${blog.id})}">
+                            <img src="https://unsplash.it/400/400?image=1005" th:src="@{${blog.firstPicture}}"
+                                 class="ui rounded image">
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--分页-->
+        <div class="ui bottom attached segment" th:if="${page.totalPages}>1">
+            <div class="ui middle aligned two column grid">
+                <div class="column">
+                    <div th:href="@{/(page=${page.number}-1)}"
+                         th:unless="${page.first}" class="ui teal mini basic button">上一页
+                    </div>
+                </div>
+                <div class="right aligned column ">
+                    <div th:href="@{/(page=${page.number}+1)}"
+                         th:unless="${page.last}" class="ui teal mini button">下一页
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!--页脚-->
+<footer th:replace="/_fragments :: footer"></footer>
+
+
+<!--/*/<th:block th:replace="_fragments :: script">/*/-->
+
+<!--/*/</th:block>/*/-->
+<script>
+    // click无法正常使用，所以使用on
+    $('.menu.toggle').on('click', function () {
+        // 隐藏标签属性为m-item的m-mobile-hide的class
+        $('.m-item').toggleClass('m-mobile-hide');
+    });
+
+    $('#payButton').popup({
+        // 绑定标签
+        popup: $('.payQR.popup'),
+        // 触发条件
+        on: 'click',
+        // 绑定的标签出现的位置
+        position: 'bottom left',
+    });
+</script>
+</body>
+</html>

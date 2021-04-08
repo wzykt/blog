@@ -1,0 +1,11 @@
+spring:
+  thymeleaf:
+    mode: HTML5
+    cache: false
+    prefix: classpath:/templates/
+  profiles:
+    active: dev
+
+
+comment.avatar: /images/IMG_0076(20201124-184110).JPG
+

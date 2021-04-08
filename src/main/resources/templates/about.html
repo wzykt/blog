@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="_fragments :: head(~{::title})">
+    <meta charset="utf-8">
+    <title>关于我</title>
+    <meta name="viewport" content="width=device-width initial-scale=1.0">
+    <link rel="stylesheet" href="http://cdn.jsdelivr.net/semantic-ui/2.2.4/semantic.min.css">
+    <link rel="stylesheet" href="../static/css/me.css">
+</head>
+<body>
+<!--    导航-->
+<nav th:replace="_fragments :: menu(5)">
+
+</nav>
+
+<!--container-->
+<div class="m-padded-tb-big m-container">
+    <div class="ui container">
+        <div class="ui grid">
+            <div class="eleven wide column">
+                <p>00年大三学生</p>
+                <p>被计算机所拥有的独特魅力所吸引</p>
+                <p>爱编程、爱运动、爱折腾</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!--页脚-->
+<footer th:replace="/_fragments :: footer"></footer>
+
+<!--/*/<th:block th:replace="_fragments :: script">/*/-->
+
+<!--/*/</th:block>/*/-->
+<script>
+    // click无法正常使用，所以使用on
+    $('.menu.toggle').on('click', function () {
+        // 隐藏标签属性为m-item的m-mobile-hide的class
+        $('.m-item').toggleClass('m-mobile-hide');
+    });
+
+    $('.qq').popup()
+    $('.github').popup()
+
+    $('.wechat').popup({
+        popup: $('.wechat-qr'),
+        on: 'click',
+        position: 'bottom center'
+    })
+</script>
+</body>
+</html>
