@@ -1,9 +1,8 @@
 package com.wzy.blog.web;
 
 import com.wzy.blog.pojo.Blog;
-import com.wzy.blog.service.BlogService;
-import com.wzy.blog.service.TagService;
-import com.wzy.blog.service.TypeService;
+import com.wzy.blog.service.*;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
@@ -14,8 +13,11 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
 import javax.jws.WebParam;
+import java.util.ArrayList;
+import java.util.List;
 
 
+@Slf4j
 @Controller
 public class IndexController {
 
@@ -29,7 +31,13 @@ public class IndexController {
     @Autowired
     private TagService tagService;
 
-    @GetMapping({"/index","/"})
+    @Autowired
+    private RedisService redisService;
+
+    @Autowired
+    private InitService initService;
+
+    @GetMapping({"/index", "/"})
     public String index(@PageableDefault(size = 8, sort = {"updateTime"}, direction = Sort.Direction.DESC) Pageable pageable, Model model) {
         Page<Blog> page = blogService.listBlog(pageable);
         System.out.println(page.isEmpty());
@@ -55,15 +63,26 @@ public class IndexController {
     }
 
     @GetMapping("/footer/newblogs")
-    public String newblogs(Model model){
-        model.addAttribute("newblogs",blogService.listRecommendBlogTop(3));
+    public String newblogs(Model model) {
+        List<Blog> topTitle = new ArrayList<>();
+        //缓存中数量不足五个时，从数据库中拿，并初始化缓存
+        if (redisService.getTopTitle().size() < 5) {
+            topTitle = blogService.listRecommendBlogTop(5);
+            log.info("初始化缓存");
+            initService.initTop5();
+        } else {
+            log.info("缓存数据");
+            topTitle = redisService.getTopTitle();
+        }
+        model.addAttribute("newblogs", topTitle);
         return "_fragments :: newblogList";
     }
 
 
     @GetMapping("/footer/adminnewblogs")
-    public String adminnewblogs(Model model){
-        model.addAttribute("newblogs",blogService.listRecommendBlogTop(3));
+    public String adminnewblogs(Model model) {
+        model.addAttribute("newblogs", blogService.listRecommendBlogTop(3));
         return "/admin/_fragments :: newblogList";
     }
+
 }

@@ -3,13 +3,14 @@ package com.wzy.blog.pojo;
 import org.hibernate.event.internal.AbstractLockUpgradeEventListener;
 
 import javax.persistence.*;
+import java.io.Serializable;
 import java.util.*;
 import java.util.ArrayList;
 import java.util.Date;
 
 @Entity
 @Table(name="t_comment")
-public class Comment {
+public class Comment implements Serializable {
 
     @Id
     @GeneratedValue
