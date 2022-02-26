@@ -1,13 +1,14 @@
 package com.wzy.blog.pojo;
 
 import javax.persistence.*;
+import java.io.Serializable;
 import java.util.*;
 import java.util.ArrayList;
 import java.util.Date;
 
 @Entity
 @Table(name="t_blog")
-public class Blog {
+public class Blog implements Serializable {
     @Id
     @GeneratedValue
     private Long id;

@@ -3,8 +3,19 @@ spring:
     username: root
     password: 123456
     driver-class-name: com.mysql.cj.jdbc.Driver
-    url: jdbc:mysql://localhost:3306/blog?useSSL=true&useUnicode=true&characterEncoding=utf8&serverTimezone=UTC
-
+    url: jdbc:mysql://81.68.169.10:3306/blog?useSSL=true&useUnicode=true&characterEncoding=utf8&serverTimezone=UTC
+  redis:
+    database: 0
+    host: 81.68.169.10
+    port: 6379
+    password: # 如果未单独配置默认为空即可
+    timeout: 1000
+    jedis:
+      pool:
+        max-active: 8
+        max-wait: -1
+        max-idle: 8
+        min-idle: 0
 
   jpa:
     hibernate:
@@ -17,5 +28,4 @@ logging:
     com.wzy: debug
   file:
     name: log/blog-dev.log
-
 

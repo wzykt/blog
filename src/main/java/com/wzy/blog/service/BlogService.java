@@ -25,6 +25,8 @@ public interface BlogService {
 
     List<Blog> listRecommendBlogTop(Integer size);
 
+    List<Blog> initRedis(Integer size);
+
     Page<Blog> listBlog(Pageable pageable,String query);
 
     Blog getAndConvert(Long id);
